@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height">
+    <title>某水产公司 2017 年月盈利变化</title>
+    <style>::-webkit-scrollbar{display:none;}html,body{overflow:hidden;height:100%;margin:0;}</style>
+    <style>
+        #mountNode1{
+            position: absolute;
+            top:0;
+            left:0;
+            width:800px;
+            height:600px;
+            z-index: 10000000;
+        }
+    </style>
+</head>
+<body>
+<div id="mountNode"></div>
+<div id="mountNode1"></div>
+<script>/*Fixing iframe window.innerHeight 0 issue in Safari*/document.body.clientHeight;</script>
+<script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.g2-3.4.1/dist/g2.min.js"></script>
+<script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.data-set-0.10.1/dist/data-set.min.js"></script>
+<script src="https://gw.alipayobjects.com/os/antv/assets/lib/jquery-3.2.1.min.js"></script>
+<script>
+    var textColor='#0bf74d'
+   var pan1=true;
+    var data = [{
+        'month': '1',
+        value: null
+    }, {
+        'month': '2',
+        value: null
+    }, {
+        'month': '3',
+        value: null
+    }, {
+        'month': '4',
+        value: null
+    }, {
+        'month': '5',
+        value: null
+    }, {
+        'month': '6',
+        value: null
+    }, {
+        'month': '7',
+        value: null
+    }, {
+        'month': '8',
+        value: null
+    }, {
+        'month': '9',
+        value: null
+    }, {
+        'month': '10',
+        value: null
+    }, {
+        'month': '11',
+        value: null
+    }, {
+        'month': '12',
+        value: null
+    }];
+    var data1=[
+        {'month': '1', value: 0},
+        {'month': '2', value: 0},
+        {'month': '3', value: 0},
+        {'month': '4', value: 0},
+        {'month': '5', value: 0},
+        {'month': '6', value: 0},
+        {'month': '7', value: 0},
+        {'month': '8', value: 0},
+        {'month': '9', value: 0},
+        {'month': '10', value: 0},
+        {'month': '11', value: 0},
+        {'month': '12', value: 0},
+        {'month': '13', value: 0},
+        {'month': '14', value: 0},
+        {'month': '15', value: 0},
+        {'month': '16', value: 0},
+        {'month': '17', value: 0},
+        {'month': '18', value: 0},
+        {'month': '19', value: 0},
+        {'month': '20', value: 0},
+        {'month': '21', value: 0},
+        {'month': '22', value: 0},
+        {'month': '23', value: 0},
+        {'month': '24', value: 0},
+        {'month': '25', value: 0},
+        {'month': '26', value: 0},
+        {'month': '27', value: 0},
+        {'month': '28', value: 0},
+        {'month': '29', value: 0},
+        {'month': '30', value: 0},
+        {'month': '31', value: 0},
+        {'month': '32', value: 0},
+        {'month': '33', value: 0},
+        {'month': '34', value: 0},
+        {'month': '35', value: 0},
+        {'month': '36', value: 0},
+        {'month': '37', value: 0},
+        {'month': '38', value: 0},
+        {'month': '39', value: 0},
+        {'month': '40', value: 0},
+        {'month': '41', value: 0},
+        {'month': '42', value: 0},
+        {'month': '43', value: 0},
+        {'month': '44', value: 0},
+        {'month': '45', value: 0},
+        {'month': '46', value: 0},
+        {'month': '47', value: 0},
+        {'month': '48', value: 0},
+        {'month': '49', value: 0},
+        {'month': '50', value: 0},
+        {'month': '51', value: 0},
+        {'month': '52', value: 0},
+        {'month': '53', value: 0},
+        {'month': '54', value: 0},
+        {'month': '55', value: 0},
+        {'month': '56', value: 0},
+        {'month': '57', value: 0},
+        {'month': '58', value: 0},
+        {'month': '59', value: 0},
+        {'month': '60', value: 0},
+        {'month': '61', value: 0},
+        {'month': '62', value: 0},
+        {'month': '63', value: 0},
+        {'month': '64', value: 0},
+        {'month': '65', value: 0},
+        {'month': '66', value: 0},
+        {'month': '67', value: 0},
+        {'month': '68', value: 0},
+        {'month': '69', value: 0},
+        {'month': '70', value: 0},
+        {'month': '71', value: 0},
+        {'month': '72', value: 0},
+        {'month': '73', value: 0},
+        {'month': '74', value: 0},
+        {'month': '75', value: 0},
+        {'month': '76', value: 0},
+        {'month': '77', value: 0},
+        {'month': '78', value: 0},
+        {'month': '79', value: 0},
+        {'month': '80', value: 0},
+        {'month': '81', value: 0},
+        {'month': '82', value: 0},
+        {'month': '83', value: 0},
+        {'month': '84', value: 0},
+        {'month': '85', value: 0},
+        {'month': '86', value: 0},
+        {'month': '87', value: 0},
+        {'month': '88', value: 0},
+        {'month': '89', value: 0},
+        {'month': '90', value: 0},
+        {'month': '91', value: 0},
+        {'month': '92', value: 0},
+        {'month': '93', value: 0},
+        {'month': '94', value: 0},
+        {'month': '95', value: 0},
+        {'month': '96', value: 0}
+
+    ]
+
+
+    var chart = new G2.Chart({
+        container: 'mountNode',
+        forceFit: false,  //是否适应浏览器窗口的变化
+        height: 600,  //绘图范围高度
+        width:800, //宽度设置
+        padding: '40'
+    });
+    chart.source(data, {
+        value: {
+            max: 2000,
+            min: -500
+        }
+    });
+    chart.scale('month', {
+        type: 'cat'
+    });
+    chart.axis('month', {
+        label: {
+            textStyle: {
+                fill:textColor
+            },
+            formatter: function formatter(text) {
+                return text;
+            }
+        }
+    });
+
+    chart.axis('value', {
+        label: {
+            textStyle: {
+                fill: '#aaaaaa'
+            }
+        }
+    });
+
+    chart.area().position('month*value').color('white').opacity(0.3).shape('smooth');
+   // chart.line().position('month*value').color('white').size(2);
+    //分段颜色
+    chart.guide().regionFilter({
+        top: true,
+        start: ['min', 'max'],
+        end: ['max', 0],
+        color: '#f5222d'
+    });
+
+    chart.guide().regionFilter({
+        top: true,
+        start: ['min', 0],
+        end: ['max', 'min'],
+        color: '#2fc25b'
+    });
+    chart.render();
+
+
+    //新写一个chart  下
+    var chart1=new G2.Chart({
+        container: 'mountNode1',
+        forceFit: false,  //是否适应浏览器窗口的变化
+        height: 600,  //绘图范围高度
+        width:800, //宽度设置
+        padding: '40'
+    });
+
+
+    chart1.source(data1, {
+        value: {
+            max: 2000,
+            min: -500
+        }
+    });
+    chart1.scale('month', {
+        type: 'cat'
+    });
+
+    chart1.axis('month', {
+        label: {
+            textStyle: {
+                fill: '#fff'
+            },
+            formatter: function formatter(text) {
+                return '';
+            }
+        },
+        tickLine:null
+    });
+
+    chart1.axis('value', {
+        label: {
+            textStyle: {
+                fill: '#aaaaaa'
+            }
+        }
+    });
+
+    chart1.area().position('month*value').color('white').opacity(0.3).shape('smooth');
+    // chart.line().position('month*value').color('white').size(2);
+    //分段颜色
+    chart1.guide().regionFilter({
+        top: true,
+        start: ['min', 'max'],
+        end: ['max', 0],
+        color: '#f5222d'
+    });
+
+    chart1.guide().regionFilter({
+        top: true,
+        start: ['min', 0],
+        end: ['max', 'min'],
+        color: '#2fc25b'
+    });
+    chart1.render();
+    //写一个timer来模拟效果
+    var i=0;
+    var pan=1;
+    var timer=setInterval(function () {
+         if(parseInt(i/8)%2==0){
+             pan=1
+         }else{
+             pan=-1
+         }
+         var number=Math.floor(Math.random()*501)*pan;
+         data1[i].value=number;
+         chart1.render();
+         i++;
+         if(i>95){
+             i=0;
+         }
+    },125)
+
+    var testTimer=setInterval(function () {
+        if(textColor==='#0bf74d'){
+            textColor='#EB374D'
+        }else{
+            textColor='#0bf74d'
+        }
+        chart.axis('month', {
+            label: {
+                textStyle: {
+                    fill:textColor
+                },
+                formatter: function formatter(text) {
+                    return text;
+                }
+            }
+        });
+        chart.render()
+    },1000)
+
+</script>
+</body>
+</html>
